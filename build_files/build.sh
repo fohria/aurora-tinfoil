@@ -12,6 +12,9 @@ set -ouex pipefail
 # this installs a package from fedora repos
 #dnf5 install -y tmux 
 
+dnf5 install -y ./opensnitch-1.7.2-1.fc43.x86_64.rpm
+ln -sf /usr/lib/systemd/system/opensnitch.service /etc/systemd/system/multi-user.target.wants/opensnitch.service
+
 #dnf5 install -y https://github.com/evilsocket/opensnitch/releases/download/v1.7.2/opensnitch-1.7.2-1.x86_64.rpm
 dnf5 install -y https://github.com/evilsocket/opensnitch/releases/download/v1.7.2/opensnitch-ui-1.7.2-1.noarch.rpm
 
